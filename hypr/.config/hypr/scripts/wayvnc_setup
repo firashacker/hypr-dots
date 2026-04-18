@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+CONFIG_DIR="$HOME/.config/wayvnc"
+CONFIG_FILE="$CONFIG_DIR/config"
+
+mkdir -p "$CONFIG_DIR"
+cd "$CONFIG_DIR"
+
+# Install wayvnc if not present
+if ! command -v wayvnc &>/dev/null; then
+    echo "Installing wayvnc..."
+    sudo pacman -S --needed wayvnc --noconfirm
+fi
+
+# Prompt for password
+read -rsp "VNC USER PASSWORD: " Password
+echo
+
+# Create config
+cat <<EOF > "$CONFIG_FILE"
+use_relative_paths=true
+address=0.0.0.0
+enable_auth=true
+username=${USER}
+password=${Password}
+private_key_file=tls_key.pem
+certificate_file=tls_cert.pem
+EOF
+
+# Generate TLS key and cert
+openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes \
+    -keyout tls_key.pem -out tls_cert.pem -subj "/CN=localhost" \
+    -addext "subjectAltName=DNS:localhost,IP:127.0.0.1"
+
+echo "WayVNC configured with TLS and password authentication."

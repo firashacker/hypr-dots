@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export WAYLAND_DISPLAY=wayland-1
+
+# Check if wayvnc is installed
+if ! command -v wayvnc &>/dev/null; then
+    notify-send -t 2000 "Please install and configure [wayvnc]"
+    exit 1
+fi
+
+# Check if config exists
+if [[ ! -f "$HOME/.config/wayvnc/config" ]]; then
+    notify-send -t 2000 "Please configure [wayvnc]"
+    exit 1
+fi
+
+# Toggle wayvnc
+if pidof wayvnc >/dev/null; then
+    killall -q wayvnc
+    notify-send -t 2000 "RemoteDesktop: Stopped!"
+else
+    wayvnc 0.0.0.0 -p 5900 &
+    notify-send -t 2000 "RemoteDesktop: Started!"
+fi

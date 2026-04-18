@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+iDIR="$HOME/.config/hypr/mako/icons"
+notify_cmd='notify-send -h string:x-canonical-private-synchronous:sys-notify-volume -u low'
+
+# Ensure pulsemixer exists
+if ! command -v pulsemixer &>/dev/null; then
+    ${notify_cmd} "'pulsemixer' is not installed."
+    exit 1
+fi
+
+# Get Volume
+get_volume() {
+    pulsemixer --get-volume | cut -d' ' -f1
+}
+
+# Get icons
+get_icon() {
+    local current
+    current=$(get_volume)
+    if (( current == 0 )); then
+        icon="$iDIR/volume-mute.png"
+    elif (( current <= 30 )); then
+        icon="$iDIR/volume-low.png"
+    elif (( current <= 60 )); then
+        icon="$iDIR/volume-mid.png"
+    else
+        icon="$iDIR/volume-high.png"
+    fi
+}
+
+# Notify
+notify_user() {
+    ${notify_cmd} -i "$icon" "Volume : $(get_volume)%"
+}
+
+# Increase Volume
+inc_volume() {
+    [[ $(pulsemixer --get-mute) == 1 ]] && pulsemixer --unmute
+    pulsemixer --max-volume 100 --change-volume +5
+    get_icon && notify_user
+}
+
+# Decrease Volume
+dec_volume() {
+    [[ $(pulsemixer --get-mute) == 1 ]] && pulsemixer --unmute
+    pulsemixer --max-volume 100 --change-volume -5
+    get_icon && notify_user
+}
+
+# Toggle Mute
+toggle_mute() {
+    if [[ $(pulsemixer --get-mute) == 0 ]]; then
+        pulsemixer --toggle-mute
+        ${notify_cmd} -i "$iDIR/volume-mute.png" "Mute"
+    else
+        pulsemixer --toggle-mute
+        get_icon
+        ${notify_cmd} -i "$icon" "Unmute"
+    fi
+}
+
+# Toggle Mic
+toggle_mic() {
+    local ID
+    ID=$(pulsemixer --list-sources | grep 'Default' | cut -d',' -f1 | awk '{print $3}')
+    if [[ $(pulsemixer --id "$ID" --get-mute) == 0 ]]; then
+        pulsemixer --id "$ID" --toggle-mute
+        ${notify_cmd} -i "$iDIR/microphone-mute.png" "Microphone Switched OFF"
+    else
+        pulsemixer --id "$ID" --toggle-mute
+        ${notify_cmd} -i "$iDIR/microphone.png" "Microphone Switched ON"
+    fi
+}
+
+# Execute accordingly
+case "${1:-}" in
+    --get) get_volume ;;
+    --inc) inc_volume ;;
+    --dec) dec_volume ;;
+    --toggle) toggle_mute ;;
+    --toggle-mic) toggle_mic ;;
+    *) echo "$(get_volume)%" ;;
+esac

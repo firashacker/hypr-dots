@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PIDFILE=/tmp/pipesbg.pid
+
+if [[ -f "$PIDFILE" ]]; then
+    PID=$(cat "$PIDFILE")
+    # تأكد أن العملية ما زالت فعالة
+    if ps -p "$PID" -o comm= | grep -Eq 'kitty|pipes.sh'; then
+        kill "$PID"
+        rm -f "$PIDFILE"
+        notify-send -t 1000 "pipes bg killed (PID $PID)"
+        echo "تم إيقاف النسخة السابقة (PID $PID)."
+        exit 0
+    else
+        echo "PID $PID ليس له علاقة بـ kitty/pipes.sh. تنظيف الملف."
+        rm -f "$PIDFILE"
+    fi
+fi
+
+# تشغيل العملية في الخلفية وحفظ الـ PID الخاص بها
+kitty +kitten panel -o "background_opacity 0" --edge=background pipes.sh -t 3 &
+
+PID=$!
+echo "$PID" > "$PIDFILE"
+notify-send -t 1000 "pipes bg started (PID $PID)"
+echo "تم تشغيل pipes في الخلفية (PID $PID)."

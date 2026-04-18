@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Install TigerVNC
+sudo pacman -S --needed tigervnc --noconfirm
+
+# Set VNC password
+vncpasswd
+
+# Secure password file
+chmod 0600 ~/.vnc/passwd
+
+# Create config
+mkdir -p ~/.vnc
+cat <<EOF > ~/.vnc/config
+session=hypr
+geometry=1920x1080
+localhost
+alwaysshared
+EOF
+
+echo "TigerVNC configured for Hyprland session."
+echo "You can start it with: vncserver :1 -localhost no -geometry 1920x1080 -SecurityTypes VncAuth"
+
+
+## enable vnc server permanently
+#systemctl --user enable vncserver@:1.service
+#systemctl --user start vncserver@:1.service

@@ -1,0 +1,14 @@
+# Source - https://stackoverflow.com/a/34905959␍
+# Posted by Phrogz␍
+# Retrieved 2026-04-17, License - CC BY-SA 3.0␍
+
+#!/usr/bin/env bash
+
+ 
+
+while true
+do
+  $HOME/.config/hypr/scripts/kunst
+  mpc idle player
+done
+

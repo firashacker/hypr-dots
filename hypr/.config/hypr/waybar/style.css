@@ -1,0 +1,227 @@
+@define-color background #2E3440;
+@define-color foreground #D8DEE9;
+@define-color accent #81A1C1;
+
+@define-color black #3B4252;
+@define-color red #BF616A;
+@define-color green #A3BE8C;
+@define-color yellow #EBCB8B;
+@define-color blue #81A1C1;
+@define-color magenta #B48EAD;
+@define-color cyan #88C0D0;
+@define-color white #E5E9F0;
+
+/* colors of polybar theme
+BACKGROUND = #2E3440
+FOREGROUND = #D8DEE9
+ALTBACKGROUND = #39404f
+ALTFOREGROUND = #768bb2
+ACCENT = #81A1C1
+
+BLACK = #3B4252
+RED = #BF616A
+GREEN = #A3BE8C
+YELLOW = #EBCB8B
+BLUE = #81A1C1
+MAGENTA = #B48EAD
+CYAN = #88C0D0
+WHITE = #E5E9F0
+ALTBLACK = #4C566A
+ALTRED = #BF616A
+ALTGREEN = #A3BE8C
+ALTYELLOW = #EBCB8B
+ALTBLUE = #81A1C1
+ALTMAGENTA = #B48EAD
+ALTCYAN = #8FBCBB
+ALTWHITE = #ECEFF4
+*/
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+  font-weight: Bold;
+  transition: none;
+  box-shadow: none;
+}
+
+#custom-launcher {
+  font-size: 18px;
+}
+
+#mpd2 mpd3 mpd4 {
+  margin-left: 10px;
+  
+}
+
+#waybar {
+  color: @foreground;
+  background: @background;
+  border-bottom: 1px solid @accent;
+  /*  opacity: 0.90;*/
+}
+
+/*#waybar > box {
+    margin: 0px 0px 8px 0px;
+   */
+/*background-color: rgba(18, 21, 29, 0.98);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);*/
+/*
+    box-shadow: 1 1 3 1px #151515;
+    transition-property: background-color;
+    transition-duration: .5s;
+}*/
+#workspaces {
+  margin: 0 1px;
+}
+
+#workspaces button {
+  margin: 0px 0;
+  padding: 0 0px;
+  color: @white;
+}
+
+#workspaces button.visible {
+}
+
+#workspaces button.active {
+  border-radius: 0px;
+  /*background-color: @black;*/
+  color: @accent;
+  border-bottom: 2px solid @white;
+}
+
+#workspaces button.urgent {
+  color: rgba(238, 46, 36, 1);
+}
+
+/*
+#tray {
+  margin: 4px 4px 4px 4px;
+  border-radius: 0px;
+  background-color: @black;
+}
+
+#tray * {
+  padding: 0 6px;
+  border-left: 1px solid @black;
+}
+
+#tray *:first-child {
+  border-left: none;
+}
+
+
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+*/
+
+#tray {
+  border-radius: 0px 0px 0px 0px;
+}
+
+#tray > widget * {
+  padding: 0px 4px;
+}
+
+#tray menu * {
+  margin: 2px 0px;
+}
+
+#tray menu menuitem:hover {
+  background-color: @accent;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+#tray > .active {
+}
+
+#cutom-separator {
+  font-size: 0.1em;
+}
+
+#custom-launcher {
+  border-radius: 0px;
+  /*background-color: @black;*/
+  color: @accent;
+  padding: 0px 6px;
+  margin-left: 6px;
+}
+
+#custom-winvm {
+  border-radius: 0px;
+  /*background-color: @black;*/
+  color: @accent;
+  padding: 0px 6px;
+  margin-left: 6px;
+}
+#custom-power {
+  border-radius: 0px;
+  /*background-color: @black;*/
+  color: @red;
+  padding: 0px 6px;
+  margin-right: 6px;
+}
+
+#bluetooth,
+#pulseaudio,
+#mode,
+#battery,
+#cpu,
+#memory,
+#network,
+#idle_inhibitor,
+#backlight,
+#custom-storage,
+#custom-updates,
+#custom-weather,
+#custom-mail,
+#temperature,
+#language {
+  margin: 4px 2px;
+  padding: 0 6px;
+  border-radius: 0px;
+  min-width: 20px;
+}
+
+#idle_inhibitor {
+  font-size: 1.3em;
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+#pulseaudio.bluetooth {
+  color: @cyan;
+}
+
+#clock {
+  font-weight: bold;
+  margin: 4px 2px;
+  padding: 0 6px;
+  border-radius: 0px;
+  min-width: 20px;
+}
+
+#temperature.critical {
+  color: @red;
+}
+
+#window {
+  font-size: 0.9em;
+  font-weight: 400;
+  font-family: sans-serif;
+}
+
+#language {
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: -1px;
+}

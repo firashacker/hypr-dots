@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+WAL="$(ls "$HOME/.config/hypr/wallpaper/current/"*.mp4 | head -n1)"
+SCREEN="HDMI-A-1"
+PIDFILE="$HOME/.config/hypr/.cache/mpvwall"
+
+# If mpvpaper is running, stop it and restore wallpaper
+if pidof mpvpaper >/dev/null; then
+    waypaper --restore
+    killall -q mpvpaper
+    rm -f "$PIDFILE"
+    notify-send -t 1000 "Video wallpaper stopped"
+    exit 0
+fi
+
+# Otherwise, start mpvpaper
+touch "$PIDFILE"
+mpvpaper -o "no-audio loop" "$SCREEN" "$WAL" &
+notify-send -t 1000 "Video wallpaper started"

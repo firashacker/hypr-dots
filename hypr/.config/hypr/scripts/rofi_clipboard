@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ ! `pidof rofi` ]];then
+	cliphist list | rofi -dmenu -theme $HOME/.config/hypr/rofi/clipboard.rasi | cliphist decode | wl-copy
+else
+	killall -q rofi
+fi

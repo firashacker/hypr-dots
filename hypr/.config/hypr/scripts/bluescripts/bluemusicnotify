@@ -1,0 +1,13 @@
+#!/bin/bash
+cd "$( dirname "${BASH_SOURCE[0]}")"
+if [[ -z "$(bluetoothctl devices Connected)" ]];then
+for i in $(pidof watch);do
+if [[ ! -z "$(ps $i|grep bluemusic)" ]];then
+kill $i
+fi
+done
+fi
+if [[ "$(bluetoothctl player.show|grep Title))" != "$(cat ~/.cache/bluemusictitle)" ]];then
+./bluemusic
+echo "$(bluetoothctl player.show|grep Title))">~/.cache/bluemusictitle
+fi

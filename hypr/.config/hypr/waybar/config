@@ -1,0 +1,640 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": ["custom/launcher", "group/left"  ],
+    "modules-center": ["group/mpd"],
+    "modules-right": ["group/right"],
+
+
+    // Modules configuration
+
+
+
+  "group/mpd":{
+    "orientation": "horizontal",
+    "modules": [
+      //"mpd#2",
+      //"mpd#3",
+      //"mpd#4",
+      "mpd",
+    ],
+  },
+
+  "group/right":{
+    "orientation": "horizontal",
+    "modules":  [
+      "pulseaudio",
+      "custom/separator",
+      "bluetooth" ,
+      "custom/separator",
+      "network",
+      "custom/separator",
+      "clock#2",
+      "tray",
+      "custom/power"
+      ],
+
+  },
+
+
+  "group/left":{
+    "orientation": "horizontal",
+    "modules": [
+    //"custom/launcher",
+    "hyprland/workspaces#roman",
+    "idle_inhibitor",
+    "custom/winvm",
+    "custom/separator#2" ,
+    "hyprland/window",
+    "custom/separator#3",
+    ],
+
+  },
+
+  "custom/launcher": {
+	//"format": "<span></span>",
+	"format": "",
+    "interval": "once",
+    "on-click": "bash -c 'if [[ ! `pidof rofi` ]];then $HOME/.config/hypr/scripts/rofi_launcher;else killall -q rofi;fi'",
+    "tooltip": false
+
+},
+  "custom/winvm": {
+	"format": "",
+    "interval": "once",
+    "on-click": "bash -c 'if [[ ! `pidof rofi` ]];then $HOME/.config/hypr/scripts/winvm;else killall -q rofi;fi'",
+    "tooltip": false
+
+},
+
+  "custom/power": {
+	"format": "<span ></span>",
+    "interval": "once",
+    "on-click": "bash -c 'if [[ ! `pidof rofi` ]];then $HOME/.config/hypr/scripts/rofi_powermenu;else killall -q rofi;fi'",
+    "tooltip": false
+
+},
+
+
+  "custom/separator": {
+    //"format": "|",
+    "format": "<span  color='#39404f'>::</span>",
+    "interval": "once",
+    "tooltip": false
+},
+
+  "custom/separator#2": {
+    "format": "<span color=\"#81A1C1\">[</span>",
+    //"format": "<span  color='#39404f'></span>",
+    "interval": "once",
+    "tooltip": false
+},
+
+  "custom/separator#3": {
+    "format": "<span color=\"#81A1C1\">]</span>",
+    //"format": "<span  color='#39404f'></span>",
+    "interval": "once",
+    "tooltip": false
+},
+
+  "hyprland/workspaces#icons": {
+    "active-only":false,
+    //"format": "{name}",
+    //"format": " {name} {icon} ",
+    "format": "<span > {icon} </span>",
+    "show-special": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "persistent-workspaces":{
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+    },
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "focused": "",
+      "default": "",
+    },
+},
+
+  "hyprland/workspaces#icons2": {
+    "active-only":false,
+    //"format": "{name}",
+    //"format": " {name} {icon} ",
+    "format": "<span > {icon} </span>",
+    "show-special": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "persistent-workspaces":{
+        "1": [],
+    },
+    "format-icons": {
+      "1": "[1]",
+      "2": "[2]",
+      "3": "[3]",
+      "4": "[4]",
+      "5": "[5]",
+      "6": "[6]",
+      "7": "[7]",
+      "8": "[8]",
+      "9": "[9]",
+      "10": "[10]",
+      "focused": "",
+      "default": "",
+    },
+},
+
+
+
+
+  
+
+    "hyprland/workspaces#roman": {
+    "active-only":false,
+    "all-outputs": true,
+    "format": " {icon} ",
+    "show-special": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "persistent-workspaces":{
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+    },
+    "format-icons": {
+      "1": "I",
+      "2": "II",
+      "3": "III",
+      "4": "IV",
+      "5": "V",
+      "6": "VI",
+      "7": "VII",
+      "8": "VIII",
+      "9": "IX",
+      "10": "X",
+
+    },
+},
+// PACMAN Style
+  "hyprland/workspaces#pacman": {
+    "active-only":false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "show-special": false,
+    "persistent-workspaces":{
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+    },
+    "format": "{icon}",
+    "format-icons": {
+      "active": " 󰮯 ",
+      "default": "󰊠",
+      "persistent":"󰊠",
+    },
+},
+
+"hyprland/workspaces#kanji": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon}",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      },
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+    }
+},
+
+//  NUMBERS and ICONS style
+"hyprland/workspaces#4": {
+    "format": "{name}",
+    //"format": " {name} {icon} ",
+    "format": " {icon} ",
+    "show-special": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "format-icons": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " ",
+      "5": " ",
+      "6": " ",
+      "7": " ",
+      "8": " ",
+      "9": " ",
+      "10": " ",
+      "focused": "",
+      "default": "",
+    },
+},
+
+ // waybar-mpd
+    "mpd": {
+        "interval": 2,
+        "unknown-tag": "N/A",
+ //     "format": " Arch | 󰔛 {elapsedTime:%M:%S}",
+        "format": " {artist} - {title} <span color=\"#A3BE8C\">󰎈</span> | <span color=\"#BF616A\" >󰔛 </span> {elapsedTime:%M:%S}",
+        "format-disconnected": "Disconnected",
+        "format-paused": " {artist} - {title} <span color=\"#A3BE8C\">󰎈</span>",
+ //     "format-paused": " Arch",
+        "format-stopped": " Stopped <span color=\"#BF616A\">󰎈</span>",
+        "tooltip-format": " MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+    // Commands to execute on events
+        "on-click": "mpc toggle",
+        "on-scroll-up": "mpc seek +00:00:01",
+        "on-scroll-down": "mpc seek -00:00:01",
+        "smooth-scrolling-threshold": 1,
+    },
+    "mpd#2": {
+        "format": "󰒮",
+        "format-disconnected": "",
+        "format-paused": "",
+        "format-stopped": "",
+    // Commands to execute on events
+        "on-click": "mpc prev",
+    },
+    "mpd#3": {
+        "interval": 1,
+        "format": "<span >{stateIcon}</span>",
+        "format-disconnected": "󰙦",
+        "format-paused": "{stateIcon}",
+        "format-stopped": "󰙦",
+        "state-icons": {
+            "paused": "<span  color=\"#BF616A\">󰐍</span>",
+            "playing": "<span color=\"#A3BE8C\">󰏦</span>"
+        },
+    // Commands to execute on events
+        "on-click": "mpc toggle",
+    },
+    "mpd#4": {
+        "format": "󰒭",
+        "format-disconnected": "",
+        "format-paused": "",
+        "format-stopped": "",
+    // Commands to execute on events
+        "on-click": "mpc next",
+    },
+
+
+
+//    "bluetooth#2": {
+//        //"controller": "controller1",
+//        //"format-device-preference": "",
+//        "format": "",
+//        "format-on": "",
+//        "format-off": "",
+//        "format-disabled": "",
+//        "format-connected": "",
+//        "format-connected-battery": "",
+//        "tooltip": true,
+//        "tooltip-format": "{controller_alias}\t{controller_address}",
+//        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+//        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+//        "on-click": "~/.config/hypr/scripts/rofi_bluetooth",
+//        "on-click-right": "blueman-manager",
+//    },
+
+    "bluetooth": {
+    //"controller": "controller1",
+    //"format-device-preference": "",
+    "format": "󰂯 {status}",
+    "format-on": "<span color=\"#81A1C1\">󰂯</span> {status}",
+    "format-off": "<span color=\"#BF616A\">󰂲</span> {status}",
+    //"format-on": "<span color=\"#81A1C1\"></span>",
+    //"format-off": "<span color=\"#BF616A\"></span>",
+    "format-disabled": "󰂲 {status}",
+    "format-connected": "<span  color=\"#A3BE8C\">󰂱</span> {device_alias}",
+    "format-connected-battery": "<span color=\"#A3BE8C\">󰂱</span> {device_alias}, <span color=\"#A3BE8C\">󰥉 </span>{device_battery_percentage}%",
+    "tooltip": true,
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "~/.config/hypr/scripts/rofi_bluetooth",
+    "on-click-right": "blueman-manager",
+    },
+
+
+    "clock#2": {
+    "interval": 1,
+    //"format": "<span  color=\"#BF616A\">󰥔</span> {:%I:%M %p}", // AM PM format
+    "format": "<span color=\"#BF616A\">󰥔</span> {:%H:%M:%S}",
+    "format-alt": "<span  color=\"#BF616A\">󰥔</span> {:%H:%M   %Y, %d %B, %A}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "format": {
+      "months":     "<span color='#ffead3'><b>{}</b></span>",
+      "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+      "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+      "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+      "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                }
+                }
+    },
+    "actions":  {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+},
+
+//     "hyprland/workspaces": {
+//         "disable-scroll": true,
+         "on-click": "activate",
+         // "all-outputs": false,
+         // "format": "{name}: {icon}",
+//         "format": "{name}",
+//         "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
+//         "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
+//         "format-icons": {
+//             "1": "",
+//             "2": "",
+//             "3": "",
+//             "4": "",
+//             "5": "",
+//             "urgent": "",
+//             "focused": "",
+//             "default": ""
+//         }
+//     },
+    "keyboard-state": {
+        "numlock": false,
+        "capslock": false,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "hyprland/window": {
+        "max-length": 30,
+        "separate-outputs": true,
+        "format": " <span >{title}</span> ",
+        "format-empty": "",
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "max-length": 18
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+//    "mpd": {
+//       "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+//        "format-disconnected": "Disconnected ",
+//        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+//        "unknown-tag": "N/A",
+//        "interval": 2,
+//        "consume-icons": {
+//            "on": " "
+//        },
+//        "random-icons": {
+//            "off": "<span color=\"#f53c3c\"></span> ",
+//            "on": " "
+//        },
+//        "repeat-icons": {
+//            "on": " "
+//        },
+//        "single-icons": {
+//           "on": "1 "
+//        },
+//        "state-icons": {
+//            "paused": "",
+//            "playing": ""
+//        },
+//        "tooltip-format": "MPD (connected)",
+//        "tooltip-format-disconnected": "MPD (disconnected)"
+//    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "<span color=\"#81A1C1\">󰈈 </span>",//"󰮔",//"",
+            "deactivated": "<span color=\"#BF616A\">󰈉 </span>",//"󰮕",//""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 0
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 🗲",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+
+    "network": {
+    //"interface": "br0",
+    "format": "{ifname}",
+    "format-wifi": "<span color=\"#81A1C1\">{icon}</span>",
+//    "format-ethernet": "󰌘",
+//    "format-disconnected": "󰌙",
+    "format-ethernet": "<span color=\"#81A1C1\">󰈀 </span> {ipaddr}",
+    "format-disconnected": "<span color=\"#BF616A\">⚠</span> Disconnected !",
+    "tooltip-format": "󰈀 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "󰤨 {essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "󰈀 {ifname}",
+    "tooltip-format-disconnected": "⚠ Disconnected",
+    "max-length": 50,
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+},
+
+	"network#speed": {
+    "interval": 1,
+    "format": "{ifname}",
+    "format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-ethernet": "󰌘   {bandwidthUpBytes}  {bandwidthDownBytes}",
+    //"format-disconnected": "󰌙",
+    "format-disconnected": "⚠ {ifname}",
+    "tooltip-format": "{ipaddr}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 50,
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+},
+
+
+//    "network": {
+//        "interface": "wlan0", // (Optional) To force the use of this interface
+//        "format-wifi": "{essid} ",
+//        "format-ethernet": "{ipaddr}/{cidr} ",
+//        "tooltip-format": "{ifname} via {gwaddr} ",
+//        "format-linked": "{ifname} (No IP) ",
+//        "format-disconnected": "Disconnected ⚠",
+//        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+//    },
+
+
+
+//   "pulseaudio#2": {
+//        // "scroll-step": 10, // %, can be a float
+//        "format": "{icon}",
+//        "format-bluetooth": "{icon}",
+//        "format-bluetooth-muted": "{icon}}",
+//        "format-muted": "婢",
+//        //"format-source": "{volume}% ",
+//        //"format-source-muted": "",
+//        "format-icons": {
+//            "headphone": "",
+//            "hands-free": "וֹ",
+//            "headset": "",
+//            "phone": "",
+//            "portable": "",
+//            "car": "",
+//            "default": ["奔", "奔", "墳", "墳", "墳"]
+//        },
+//        "on-click": "pavucontrol"
+//    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "<span  color=\"#81A1C1\">{icon}</span> {volume}%",
+//        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": "{icon} Mute",
+        "format-muted": "󰖁 Mute",
+        //"format-source": "{volume}% ",
+        //"format-source-muted": "",
+        "format-icons": {
+            "headphone": "󰋋",
+            //"hands-free": "וֹ",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [ "󰕿","󰖀", "󰕾" ,"󰕾" ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon} ",
+        "format-icons": {
+            "notification": "<span color=\"#A3BE8C\">󰆁 </span><span foreground='red' ><sup></sup></span> ",
+            "none": "<span color=\"#A3BE8C\" >󰆁 </span>",
+            "dnd-notification": "<span color=\"#BF616A\">󰆁 </span><span foreground='red' ><sup></sup></span> ",
+            "dnd-none": "<span color=\"#BF616A\">󰆁 </span>",
+            "inhibited-notification": "<span color=\"#BF616A\">󰆁 </span><span foreground='red' ><sup></sup></span> ",
+            "inhibited-none": "<span color=\"#BF616A\">󰆁</span>",
+            "dnd-inhibited-notification": "<span color=\"#BF616A\" >󰆁 </span><span foreground='red'><sup></sup></span> ",
+            "dnd-inhibited-none": "<span color=\"#BF616A\" >󰆁 </span>"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "custom/updates": {
+        "format": "{} {icon}",
+        "return-type": "json",
+        "format-icons": {
+            "has-updates": "󱍷",
+            "updated": "󰂪"
+        },
+        "exec-if": "which waybar-module-pacman-updates",
+        "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
+    }
+}

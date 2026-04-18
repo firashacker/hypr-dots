@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Theme Elements
+DIR="$HOME/.config/hypr"
+CNFR="$DIR/rofi/confirm.rasi"
+
+yes=''
+no=''
+
+answer=$(echo -e "$yes\n$no"|rofi -dmenu  -p 'Confirmation' -mesg 'Start Windows VM?' -theme ${CNFR})
+echo $answer
+if [[ $answer == "$yes" ]];then
+	virsh -c qemu:///system start windows11
+fi

@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PIDFILE=/tmp/cavabg.pid
+
+# Stop existing process if PID file exists
+if [[ -f "$PIDFILE" ]]; then
+    PID=$(cat "$PIDFILE")
+    if ps -p "$PID" -o comm= | grep -Eq 'kitty|cava'; then
+        kill "$PID"
+        rm -f "$PIDFILE"
+        notify-send -t 1000 "cava bg killed (PID $PID)"
+        echo "تم إيقاف النسخة السابقة (PID $PID)."
+        exit 0
+    else
+        echo "PID $PID is not kitty/cava, ignoring."
+        rm -f "$PIDFILE"
+    fi
+fi
+
+# Start new process in background
+kitty +kitten panel -o "background_opacity 0" --edge=background cava &
+
+# Save PID of kitty
+PID=$!
+echo "$PID" > "$PIDFILE"
+
+notify-send -t 1000 "cava bg started (PID $PID)"
+echo "تم تشغيل cava في الخلفية (PID $PID)."

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+##
+## Run ncmpcpp with alternate config
+
+# hypr directory
+DIR="$HOME/.config/hypr"
+
+#CONFIG="$DIR/alacritty/alacritty.toml"
+
+kitty -c ~/.config/hypr/nord-kitty.conf --class 'Music'\
+		  -e ncmpcpp
+#		  -o window.dimensions.columns=80 window.dimensions.lines=22 \
+#		  -o window.dimensions.columns=105 window.dimensions.lines=22 \
+#		  -e ~/.ncmpcpp/scripts/ncmpcpp-art

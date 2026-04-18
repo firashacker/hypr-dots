@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+#export PATH = $PATH:$HOME/.config/hypr/scripts
+
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+##
+## Autostart Programs
+
+# Kill already running process
+_ps=(waybar swaync)
+for _prs in "${_ps[@]}"; do
+	if [[ `pidof ${_prs}` ]]; then
+		killall -9 ${_prs}
+	fi
+done
+
+# Set wallpaper
+#~/.config/hypr/scripts/wallpaper &
+
+
+
+#video wallpaper
+#WALPID="$HOME/.config/hypr/.cache/mpvwall"
+#if [[ -f $WALPID ]];then
+#	~/.config/hypr/scripts/videowallpaper > $WALPID &
+#else
+if command -v waypaper &>/dev/null; then
+    waypaper --restore &
+else
+    hyprpaper &
+fi
+#fi
+
+
+
+
+
+#vnc remote desktop
+~/.config/hypr/scripts/vnc &
+
+
+
+# Apply themes
+#~/.config/hypr/scripts/gtkthemes &
+
+
+#start hypridle
+hypridle &
+
+# Lauch notification daemon (mako)
+#~/.config/hypr/scripts/notifications &
+if [[ ! `pidof swaync` ]]; then
+	swaync &
+fi
+
+# Lauch statusbar (waybar)
+$HOME/.config/hypr/scripts/statusbar &
+
+# Start network manager applet
+nm-applet --indicator &
+#blueman-applet
+#hyprland portal
+#portal &
+
+
+#start kdeconnect daemon
+#/usr/lib/kdeconnectd &
+# Start mpd
+exec mpd -v &
+
+
+# start openrazer daemon
+openrazer-daemon &
+
+
+#start mpd trackchange notifier daemon
+killall -q mpdtrack &&  bash -c 'sleep 2 && "$HOME/.config/hypr/scripts/mpdtrack"' &
+
+#start clipmanager listiner
+wl-paste --watch cliphist store &
+
+# autostart apps
+dex -a -s ~/.config/autostart/ &
+
+#~/.config/hypr/scripts/bongocat.sh &
+
+# Mount my smb share
+#bash -c 'sleep 5 && echo -e "firas\n\n'Password'"|gio mount smb://192.168.88.200/rpi4' &
+
+# Mount HDD Drive
+#udisksctl mount  -t ntfs -b /dev/disk/by-label/HDD

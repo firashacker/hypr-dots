@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+WAL="$(ls "$HOME/.config/hypr/wallpaper/current/"*.mp4 | head -n1)"
+SCREEN="HDMI-A-1"
+
+if ! pidof mpvpaper >/dev/null; then
+    # Start mpvpaper with video wallpaper
+    mpvpaper -o "no-audio loop" "$SCREEN" "$WAL" &
+
+    # symlink video wallpaper dir if not already present
+    if [[ ! -e "$HOME/Videos/wallpaper" ]]; then
+        ln -s "$HOME/.config/hypr/wallpaper" "$HOME/Videos/wallpaper"
+    fi
+    echo "Started mpvpaper with $WAL"
+else
+    # Stop mpvpaper and restore static wallpaper
+    waypaper --restore
+    killall -q mpvpaper
+    echo "Stopped mpvpaper and restored wallpaper"
+fi

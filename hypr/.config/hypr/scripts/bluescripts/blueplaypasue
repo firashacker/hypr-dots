@@ -1,0 +1,12 @@
+#!/bin/bash
+cd "$( dirname "${BASH_SOURCE[0]}")"
+
+if [ $(echo $(bluetoothctl player.show|grep Status)|sed "s/Status: //g") == "playing" ];
+then
+bluetoothctl player.stop
+notify-send "Paused !"
+else
+bluetoothctl player.play
+./bluemusic
+sleep 2
+fi

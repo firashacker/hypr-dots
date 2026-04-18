@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+if [[ -e $(which google-chrome-stable) ]];then
+	google-chrome-stable
+else
+    #xdg-settings set default-web-browser firefox.desktop
+	#firefox
+	brave
+fi

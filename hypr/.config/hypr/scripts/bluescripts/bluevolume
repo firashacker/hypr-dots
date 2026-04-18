@@ -1,0 +1,43 @@
+#!/bin/bash
+declare -i delay=300
+declare -i max=127
+declare -i step=8
+declare -i x=$(bluetoothctl transport.volume $(bluetoothctl transport.list|sed "s/Transport //g")|sed "s/(/\n/g"|grep \)|sed "s/)//g"|sed "s/\n//g")
+if [ $1 == 'up' ];then
+if (( $x == $max ));then
+echo $x
+notify-send "Bluetooth Volume: 100% "
+exit
+fi
+x=$x+$step
+echo $x
+if (( $x > $max ));then
+bluetoothctl transport.volume $(bluetoothctl transport.list|sed "s/Transport //g") $max
+notify-send "Bluetooth Volume: 100% "
+
+else
+bluetoothctl transport.volume $(bluetoothctl transport.list|sed "s/Transport //g") $x
+declare -i a=x*100/$max;notify-send -t $delay "Bluetooth Volume: "$a"%"
+fi
+else
+if [ $1 == 'down' ];then
+
+#declare -i x=$(bluetoothctl transport.volume $(bluetoothctl transport.list|sed "s/Transport //g")|sed "s/(/\n/g"|grep \)|sed "s/)//g"|sed "s/\n//g")
+echo $x
+if (( $x == 0 ));then
+echo $x
+notify-send "Bluetooth Volume: 0.0% "
+else
+x=$x-$step
+echo $x
+if (( $x < 0 ));then
+bluetoothctl transport.volume $(bluetoothctl transport.list|sed "s/Transport //g") 0
+notify-send "Bluetooth Volume: 0.0% "
+else
+bluetoothctl transport.volume $(bluetoothctl transport.list|sed "s/Transport //g") $x
+declare -i a=x*100/$max;notify-send -t $delay "Bluetooth Volume: "$a"%"
+
+fi
+fi
+fi
+fi

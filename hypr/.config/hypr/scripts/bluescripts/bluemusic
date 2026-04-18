@@ -1,0 +1,5 @@
+#!/bin/bash
+#pkill bluemusicnotify
+sleep 0.5
+notify-send  "$(echo $(bluetoothctl player.show|grep Artist))
+$(echo $(bluetoothctl player.show|grep Title))"
