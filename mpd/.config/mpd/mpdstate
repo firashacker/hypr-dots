@@ -1,9 +1,10 @@
 sw_volume: 40
 audio_device_state:1:Pipewire audio
-state: stop
-current: 98
+state: pause
+current: 8
+time: 8.492
 random: 0
-repeat: 0
+repeat: 1
 single: 0
 consume: 0
 crossfade: 0
