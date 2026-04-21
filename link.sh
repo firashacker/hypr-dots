@@ -30,3 +30,9 @@ if [[ $answer == "y" ]] || [[ $answer == "Y" ]];then
 	done
 	stow -t "$HOME" */
 fi
+
+echo "Installing tmux-plugin-manager"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "Installing tmux plugins"
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
