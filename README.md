@@ -1,6 +1,6 @@
 # hypr-dots
 
-#setup
+# setup
 <br/>
 1 - clone ```cd ~ && git clone https://github.com/firashacker/hypr-dots```
 <br/>
