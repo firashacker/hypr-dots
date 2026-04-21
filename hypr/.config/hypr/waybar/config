@@ -56,8 +56,8 @@
   },
 
   "custom/launcher": {
-	//"format": "<span></span>",
-	"format": "",
+	//"format": "",
+	"format": "",
     "interval": "once",
     "on-click": "bash -c 'if [[ ! `pidof rofi` ]];then $HOME/.config/hypr/scripts/rofi_launcher;else killall -q rofi;fi'",
     "tooltip": false

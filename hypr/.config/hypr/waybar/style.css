@@ -44,9 +44,6 @@ ALTWHITE = #ECEFF4
   box-shadow: none;
 }
 
-#custom-launcher {
-  font-size: 18px;
-}
 
 #mpd2 mpd3 mpd4 {
   margin-left: 10px;
@@ -148,11 +145,14 @@ ALTWHITE = #ECEFF4
 
 #custom-launcher {
   border-radius: 0px;
-  /*background-color: @black;*/
-  color: @accent;
+  /*background-color: @black;
+  color: @accent;*/
+  color: cyan;
   padding: 0px 6px;
   margin-left: 6px;
+  font-size: 18px;
 }
+
 
 #custom-winvm {
   border-radius: 0px;

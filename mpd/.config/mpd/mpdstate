@@ -2,7 +2,7 @@ sw_volume: 30
 audio_device_state:1:Pipewire audio
 state: play
 current: 101
-time: 120.208
+time: 120.04
 random: 0
 repeat: 1
 single: 1
