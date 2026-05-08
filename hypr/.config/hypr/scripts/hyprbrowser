@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
-if [[ -e $(which google-chrome-stable) ]];then
-	google-chrome-stable
+
+if command -v helium >/dev/null 2>&1; then
+    helium
+elif command -v google-chrome-stable >/dev/null 2>&1; then
+    google-chrome-stable
+elif command -v brave >/dev/null 2>&1; then
+    brave
 else
-    #xdg-settings set default-web-browser firefox.desktop
-	#firefox
-	brave
+    # خيار احتياطي في حال عدم وجود أي مما سبق
+    echo "لم يتم العثور على متصفح مدعوم. محاولة تشغيل المتصفح الافتراضي..."
+    xdg-open "http://localhost:3000"
 fi

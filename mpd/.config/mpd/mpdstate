@@ -1,7 +1,8 @@
-sw_volume: 30
+sw_volume: 20
 audio_device_state:1:Pipewire audio
-state: stop
-current: 101
+state: pause
+current: 17
+time: 167.708
 random: 0
 repeat: 1
 single: 1
@@ -67,53 +68,54 @@ playlist_begin
 53:Karam shrideh - mad'oor _ كرم شريده - معذور .mp3
 54:Karam shrideh X Skof_q _ بعيد عن فيك _ b3eed 3n fyek ..mp3
 55:Mel Awel - 3askalany ｜｜           من الاول  - عسكلاني.mp3
-56:MoJaNaD - Mesh Raje3 مجند - مش راجع (Official Music Video).mp4
-57:Muslim -Etnaset  مسلم - اتنسيت (الاغنية الرسمية لفيلم عروستي).mp3
-58:N3WPORT - Power (feat. braev).mp3
-59:NEFFEX - Grateful.mp3
-60:R3D & Shabjdeed - Umro2 (Prod. Al Nather).mp3
-61:SALAMEH - ghyoum ｜ سلامة - غيوم (Official Music Video 2021) (Prod by Shakurov).m4a
-62:Salameh ｜｜ سلامة ｜｜ تراك قديم المحذوف ｜｜ OLD TRACK.m4a
-63:Sally Alawady - Ya Ghayeb سالي العوضي - يا غايب.mp3
-64:Sherine - Batmanna Ansak ｜ شيرين - بتمنى أنساك.mp3
-65:shouk_alAkhras.mp3
-66:Shroof - kef alhal ｜ شروف - كيف الحال.mp3
-67:Siilawy - عشانك (prod.APC).mp3
-68:Siilawy - عشاني (Official Music Video).mp4
-69:Siilawy - لا تنسيني - (official video)(prod.APC).mp3
-70:Siilawy - لسا معاكي (official music video).mp3
-71:Siilawy - مشتاق.mp3
-72:Siilawy - وينك ( prod.Raspo ).mp3
-73:Teefo - sam3ak I تيفو -سامعك (Official Audio) (Prod by RPK)( قلبي دا بيرن الو مين).mp3
-74:track el mousem _ تراك الموسم.mp3
-75:TRACK ｜ SALAMEH (FT) ILLIAM AYAMM.mp3
-76:Wegz - ElBakht ويجز - البخت (Audio) prod. Rahal.mp4
-77:أغنية ＂ واديني اهو عايش في حالي ＂ احمد مشعل ｜ Audio ＂Wadeney Aho Aye4 Fe Haly＂ Ahmed Mashal.mp3
-78:الأخرس _ كان ياما كان Alakhras Kan yama kan ( lyrics) كلمات.mp3
-79:توليت - وهحكيلك حكاوي قسم الشكاوي 2025 - تريند التيك توك 2025.mp3
-80:راب مين ضل _ Rap myn dal ｜｜ #سلامه #salameh.mp3
-81:سلامة بخافش الموت - Salameh bakhafsh almoot مع الكلمات.m4a
-82:عراقي/@Musicstyleofficial  ياسر عبدالوهاب ｜ قلبي جبرني.mp3
-83:عراقي/Nabeel Aladeeb – Khbr Fezzni (Video) ｜نبيل الاديب بمشاركة احمد الاوسي - خبر فززني (فيديو) ｜2023.mp3
-84:عراقي/أحمد المصلاوي - مكتوب ما ارتاح (حصريا) ｜ 2019.mp3
-85:عراقي/أنا بحقي غلطان لعبت بحالي لعبة ｜ اغاني 2018.mp3
-86:عراقي/ارشيف عراقي  ｜  جان يحبني حيل جان يموت بيه ｜  جرحي بفراقه كبر ｜  حبه ويادمي مشى ｜  تبطئ مميز.mp3
-87:عراقي/ارشيف عراقي - حرامات ｜ خبر جابولك يفرحك - حبيبك مات من جرحك ｜ بطيء.mp3
-88:عراقي/ارشيف عراقي - صرت هسه انا ماهمك ｜ طلع ميحبني مصلحجي بطيء.mp3
-89:عراقي/ارشيف عراقي مطلوب  ｜  حيل تعبت حصرياً  Evan Naji  ： Heel Teabt Exclusive.mp3
-90:عراقي/اغنيه نساني.mp3
-91:عراقي/دمرها لروحي المسكينه - مسرع.mp3
-92:عراقي/سيف عامر - ورقة (حصرياً) ｜ 2019 ｜ (Saif Amer - Warqa (Exclusive.mp3
-93:عراقي/عبدالله - ذاك الأناني (حصرياً) ｜ 2018 ｜ ABDULLAH - Thak Alanany.mp3
-94:عراقي/عراقي 2023 ｜ خبـر فززنــي من النوم لمن كالو مسافر ｜  عفتنـي بلا وداع شلــون ارجع فدوا ودعني   حصريآ.mp3
-95:عراقي/عراقي حزين اجاني شامت  ｜ مسرع  ｜ مطلوب اكثر شي.mp3
-96:عراقي/غريب ال مخلص - البعد موتي.mp3
-97:عراقي/قائد حلمي - الله لايجعلني شامت (فيديو كليب) ｜ 2014.mp3
-98:عراقي/قاسم السلطان - حرامات ⧸ Video Clip.mp3
-99:عراقي/قالولي يحب غيرك  ​-  يجي يوم من الايام  - امير عصام ｜ جديد.mp3
-100:عراقي/قبل يومين ~ مسرع.mp3
-101:عراقي/نصرت البدر - العمر راح (النسخة الأصلية).mp3
-102:فرسوني - خايف ｜ Farsoney.mp3
-103:مهرة - اسماعيل تمر Ft أوكتاي ｜｜ Mohra - Ismaeil Tamr Ft Oktay.mp3
-104:نمير البيك - نت الحب - صبحي محمد _ Sobhi Mohammad.mp3
+56:Mohamed Alflahi – Athr Dhelak (Official Music Video, 2025)｜ محمد الفلاحي - اثر ظلك (#2 من البوم قصة).mp3
+57:MoJaNaD - Mesh Raje3 مجند - مش راجع (Official Music Video).mp4
+58:Muslim -Etnaset  مسلم - اتنسيت (الاغنية الرسمية لفيلم عروستي).mp3
+59:N3WPORT - Power (feat. braev).mp3
+60:NEFFEX - Grateful.mp3
+61:R3D & Shabjdeed - Umro2 (Prod. Al Nather).mp3
+62:SALAMEH - ghyoum ｜ سلامة - غيوم (Official Music Video 2021) (Prod by Shakurov).m4a
+63:Salameh ｜｜ سلامة ｜｜ تراك قديم المحذوف ｜｜ OLD TRACK.m4a
+64:Sally Alawady - Ya Ghayeb سالي العوضي - يا غايب.mp3
+65:Sherine - Batmanna Ansak ｜ شيرين - بتمنى أنساك.mp3
+66:shouk_alAkhras.mp3
+67:Shroof - kef alhal ｜ شروف - كيف الحال.mp3
+68:Siilawy - عشانك (prod.APC).mp3
+69:Siilawy - عشاني (Official Music Video).mp4
+70:Siilawy - لا تنسيني - (official video)(prod.APC).mp3
+71:Siilawy - لسا معاكي (official music video).mp3
+72:Siilawy - مشتاق.mp3
+73:Siilawy - وينك ( prod.Raspo ).mp3
+74:Teefo - sam3ak I تيفو -سامعك (Official Audio) (Prod by RPK)( قلبي دا بيرن الو مين).mp3
+75:track el mousem _ تراك الموسم.mp3
+76:TRACK ｜ SALAMEH (FT) ILLIAM AYAMM.mp3
+77:Wegz - ElBakht ويجز - البخت (Audio) prod. Rahal.mp4
+78:أغنية ＂ واديني اهو عايش في حالي ＂ احمد مشعل ｜ Audio ＂Wadeney Aho Aye4 Fe Haly＂ Ahmed Mashal.mp3
+79:الأخرس _ كان ياما كان Alakhras Kan yama kan ( lyrics) كلمات.mp3
+80:توليت - وهحكيلك حكاوي قسم الشكاوي 2025 - تريند التيك توك 2025.mp3
+81:راب مين ضل _ Rap myn dal ｜｜ #سلامه #salameh.mp3
+82:سلامة بخافش الموت - Salameh bakhafsh almoot مع الكلمات.m4a
+83:عراقي/@Musicstyleofficial  ياسر عبدالوهاب ｜ قلبي جبرني.mp3
+84:عراقي/Nabeel Aladeeb – Khbr Fezzni (Video) ｜نبيل الاديب بمشاركة احمد الاوسي - خبر فززني (فيديو) ｜2023.mp3
+85:عراقي/أحمد المصلاوي - مكتوب ما ارتاح (حصريا) ｜ 2019.mp3
+86:عراقي/أنا بحقي غلطان لعبت بحالي لعبة ｜ اغاني 2018.mp3
+87:عراقي/ارشيف عراقي  ｜  جان يحبني حيل جان يموت بيه ｜  جرحي بفراقه كبر ｜  حبه ويادمي مشى ｜  تبطئ مميز.mp3
+88:عراقي/ارشيف عراقي - حرامات ｜ خبر جابولك يفرحك - حبيبك مات من جرحك ｜ بطيء.mp3
+89:عراقي/ارشيف عراقي - صرت هسه انا ماهمك ｜ طلع ميحبني مصلحجي بطيء.mp3
+90:عراقي/ارشيف عراقي مطلوب  ｜  حيل تعبت حصرياً  Evan Naji  ： Heel Teabt Exclusive.mp3
+91:عراقي/اغنيه نساني.mp3
+92:عراقي/دمرها لروحي المسكينه - مسرع.mp3
+93:عراقي/سيف عامر - ورقة (حصرياً) ｜ 2019 ｜ (Saif Amer - Warqa (Exclusive.mp3
+94:عراقي/عبدالله - ذاك الأناني (حصرياً) ｜ 2018 ｜ ABDULLAH - Thak Alanany.mp3
+95:عراقي/عراقي 2023 ｜ خبـر فززنــي من النوم لمن كالو مسافر ｜  عفتنـي بلا وداع شلــون ارجع فدوا ودعني   حصريآ.mp3
+96:عراقي/عراقي حزين اجاني شامت  ｜ مسرع  ｜ مطلوب اكثر شي.mp3
+97:عراقي/غريب ال مخلص - البعد موتي.mp3
+98:عراقي/قائد حلمي - الله لايجعلني شامت (فيديو كليب) ｜ 2014.mp3
+99:عراقي/قاسم السلطان - حرامات ⧸ Video Clip.mp3
+100:عراقي/قالولي يحب غيرك  ​-  يجي يوم من الايام  - امير عصام ｜ جديد.mp3
+101:عراقي/قبل يومين ~ مسرع.mp3
+102:عراقي/نصرت البدر - العمر راح (النسخة الأصلية).mp3
+103:فرسوني - خايف ｜ Farsoney.mp3
+104:مهرة - اسماعيل تمر Ft أوكتاي ｜｜ Mohra - Ismaeil Tamr Ft Oktay.mp3
+105:نمير البيك - نت الحب - صبحي محمد _ Sobhi Mohammad.mp3
 playlist_end
