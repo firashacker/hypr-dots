@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export PATH=$PATH:$HOME/.local/bin:$HOME/.local/guest-bin:$HOME/.bun/bin
 
 if command -v helium >/dev/null 2>&1; then
     helium
