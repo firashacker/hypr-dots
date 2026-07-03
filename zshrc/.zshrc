@@ -2,6 +2,7 @@
 export PATH=$PATH:$HOME/.local/bin:$HOME/.local/guest-bin:$HOME/.bun/bin:$HOME/.local/scripts/theos/bin 
 export THEOS=~/.local/scripts/theos 
 export HSA_OVERRIDE_GFX_VERSION="10.3.0" # Force GPU for ollama [cite: 36]
+export NIXPKGS_ALLOW_UNFREE=1
 
 # Completion system configuration
 autoload -Uz compinit && compinit
